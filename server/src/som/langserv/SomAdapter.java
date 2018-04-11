@@ -36,12 +36,12 @@ import com.oracle.truffle.api.source.SourceSection;
 import com.oracle.truffle.api.vm.PolyglotEngine;
 import com.oracle.truffle.api.vm.PolyglotEngine.Builder;
 
+import bd.basic.ProgramDefinitionError;
 import som.VM;
 import som.compiler.MixinDefinition;
 import som.compiler.MixinDefinition.SlotDefinition;
 import som.compiler.Parser.ParseError;
-import som.compiler.ProgramDefinitionError;
-import som.compiler.ProgramDefinitionError.SemanticDefinitionError;
+import som.compiler.SemanticDefinitionError;
 import som.compiler.SourcecodeCompiler;
 import som.interpreter.SomLanguage;
 import som.interpreter.nodes.ArgumentReadNode.LocalArgumentReadNode;
