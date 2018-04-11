@@ -162,13 +162,13 @@ public class SomStructures extends StructuralProbe {
     Set<SInvokable> methods = new HashSet<>();
 
     for (MixinDefinition c : classes) {
-      for (Dispatchable disp : c.getInstanceDispatchables().values()) {
+      for (Dispatchable disp : c.getInstanceDispatchables().getValues()) {
         if (disp instanceof SInvokable) {
           methods.add((SInvokable) disp);
         }
       }
 
-      for (SInvokable disp : c.getFactoryMethods().values()) {
+      for (SInvokable disp : c.getFactoryMethods().getValues()) {
         methods.add(disp);
       }
     }
@@ -181,13 +181,13 @@ public class SomStructures extends StructuralProbe {
 
   @Override
   public void recordNewClass(final MixinDefinition clazz) {
-    for (Dispatchable disp : clazz.getInstanceDispatchables().values()) {
+    for (Dispatchable disp : clazz.getInstanceDispatchables().getValues()) {
       if (disp instanceof SInvokable) {
         assert ((SInvokable) disp).getHolder() != null;
       }
     }
 
-    for (SInvokable disp : clazz.getFactoryMethods().values()) {
+    for (SInvokable disp : clazz.getFactoryMethods().getValues()) {
       assert disp.getHolder() != null;
     }
 
